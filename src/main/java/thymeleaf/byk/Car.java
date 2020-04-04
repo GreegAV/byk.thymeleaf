@@ -15,6 +15,14 @@ public class Car {
         this.mark = mark;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", mark='" + mark + '\'' +
+                '}';
+    }
+
     public String getModel() {
         return model;
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>List of Cars</title>
@@ -11,7 +11,14 @@
         <td th:text="${car.getModel()}"></td>
         <td th:text="${car.getMark()}"></td>
     </tr>
-
 </table>
+<br/>
+<br/>
+<br/>
+<form th:action="@{/addCar}" th:object="${newCar}" method="post">
+    <p>Model: <input type="text" th:field="*{model}"></p>
+    <p>Mark: <input type="text" th:field="*{mark}"></p>
+    <p><input type="submit" value="Add new car"></p>
+</form>
 </body>
 </html>
